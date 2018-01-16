@@ -1,9 +1,14 @@
 import React from 'react';
+import Main from '../Main/Main';
 
-const App = () => (
-  <div>
-    <h1>Hello World!</h1>
-  </div>
-);
+import './app.scss';
+
+const App = () => {
+  return (
+    <div className="app">
+      <Main />
+    </div>
+  );
+};
 
 export default App;
