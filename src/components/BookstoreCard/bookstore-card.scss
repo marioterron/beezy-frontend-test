@@ -1,0 +1,29 @@
+.bookstore-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  &__input {
+    display: none !important;
+    margin: 2.5px 0 !important;
+
+    &.is-active {
+      display: inline-block !important;
+    }
+  }
+
+  &__field {
+    &.is-inactive {
+      display: none;
+    }
+  }
+
+  &__save-btn {
+    display: none !important;
+    margin-top: 16px;
+
+    &.is-active {
+      display: inline-block !important;
+    }
+  }
+}
