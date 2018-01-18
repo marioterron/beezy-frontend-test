@@ -1,9 +1,10 @@
 import React from 'react';
 import { Card, Icon, Input, Button } from 'antd';
+import PropTypes from 'prop-types';
 
 import './bookstore-card.scss';
 
-const BookstoreCard = () => {
+const BookstoreCard = ({ title, genre, price }) => {
   const editBook = e => {
     const elCard = e.target.parentElement.parentElement.parentElement.parentElement;
     const elSaveBtn = elCard.getElementsByClassName('bookstore-card__save-btn')[0];
@@ -18,26 +19,32 @@ const BookstoreCard = () => {
   return (
     <Card
       className="bookstore-card"
-      title="REDUX"
+      title={title}
       actions={[<Icon type="edit" onClick={editBook} />, <Icon type="delete" />]}
     >
       <div className="bookstore-card__field">
-        <strong>Title:</strong> <span>Redux</span>
+        <strong>Title:</strong> <span>{title}</span>
       </div>
-      <Input className="bookstore-card__input" />
+      <Input className="bookstore-card__input" defaultValue={title} />
       <div className="bookstore-card__field">
-        <strong>Genre:</strong> <span>Redux</span>
+        <strong>Genre:</strong> <span>{genre}</span>
       </div>
-      <Input className="bookstore-card__input" />
+      <Input className="bookstore-card__input" defaultValue={genre} />
       <div className="bookstore-card__field">
-        <strong>Price:</strong> <span>10 $</span>
+        <strong>Price:</strong> <span>{price} $</span>
       </div>
-      <Input className="bookstore-card__input" />
+      <Input className="bookstore-card__input" defaultValue={price} />
       <Button className="bookstore-card__save-btn" type="primary" icon="save">
         Save changes
       </Button>
     </Card>
   );
+};
+
+BookstoreCard.propTypes = {
+  title: PropTypes.string.isRequired,
+  genre: PropTypes.string.isRequired,
+  price: PropTypes.number.isRequired
 };
 
 export default BookstoreCard;

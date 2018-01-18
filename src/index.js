@@ -1,8 +1,18 @@
 import React from 'react';
 import { render } from 'react-dom';
+import { createStore } from 'redux';
+import { Provider } from 'react-redux';
+
+import bookstore from './reducers/bookstore';
+import App from './containers/App';
 
 import './styles.scss';
 
-import BookstoreApp from './components/BookstoreApp/BookstoreApp';
+const store = createStore(bookstore);
 
-render(<BookstoreApp />, document.getElementById('root'));
+render(
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.getElementById('root')
+);

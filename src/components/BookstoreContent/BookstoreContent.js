@@ -1,7 +1,6 @@
 import React from 'react';
 import { Layout } from 'antd';
-
-import BookstoreMenu from '../BookstoreMenu/BookstoreMenu';
+import PropTypes from 'prop-types';
 import BookstoreCard from '../BookstoreCard/BookstoreCard';
 import BookstoreForm from '../BookstoreForm/BookstoreForm';
 
@@ -9,35 +8,28 @@ import './bookstore-content.scss';
 
 const { Content, Footer } = Layout;
 
-const Main = () => {
+const BookstoreContent = ({ books }) => {
   return (
     <Layout className="bookstore-content">
-      <BookstoreMenu />
       <Content style={{ padding: '0 50px' }}>
         <BookstoreForm />
         <div
           className="bookstore-content__wrapper"
           style={{ background: '#fff', padding: 24, minHeight: 280 }}
         >
-          <BookstoreCard />
-          <BookstoreCard />
-          <BookstoreCard />
-          <BookstoreCard />
-          <BookstoreCard />
-          <BookstoreCard />
-          <BookstoreCard />
-          <BookstoreCard />
-          <BookstoreCard />
-          <BookstoreCard />
-          <BookstoreCard />
-          <BookstoreCard />
+          {books.map(book => <BookstoreCard key={book.id} {...book} />)}
         </div>
       </Content>
       <Footer style={{ textAlign: 'center' }}>
-        Coded with ❤️ by <a href="https://github.com/marioterron">Mario Terron</a>
+        Coded with <span role="img">❤️ </span>by
+        <a href="https://github.com/marioterron">Mario Terron</a>
       </Footer>
     </Layout>
   );
 };
 
-export default Main;
+BookstoreContent.propTypes = {
+  books: PropTypes.arrayOf(PropTypes.object).isRequired
+};
+
+export default BookstoreContent;
