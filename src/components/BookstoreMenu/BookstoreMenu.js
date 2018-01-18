@@ -17,7 +17,9 @@ const BookstoreMenu = () => {
         style={{ lineHeight: '64px' }}
       >
         <Menu.Item key="1">Books</Menu.Item>
-        <Menu.Item key="2">Genres</Menu.Item>
+        <Menu.Item disabled key="2">
+          Genres
+        </Menu.Item>
       </Menu>
     </Header>
   );
