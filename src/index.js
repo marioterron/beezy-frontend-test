@@ -3,6 +3,6 @@ import { render } from 'react-dom';
 
 import './styles.scss';
 
-import App from './components/app/app';
+import BookstoreApp from './components/BookstoreApp/BookstoreApp';
 
-render(<App />, document.getElementById('root'));
+render(<BookstoreApp />, document.getElementById('root'));

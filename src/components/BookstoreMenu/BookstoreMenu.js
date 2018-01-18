@@ -1,15 +1,15 @@
 import React from 'react';
 import { Layout, Menu } from 'antd';
-import Logo from '../Logo/Logo';
+import BookstoreLogo from '../BookstoreLogo/BookstoreLogo';
 
-import './navbar.scss';
+import './bookstore-menu.scss';
 
 const { Header } = Layout;
 
-const Navbar = () => {
+const BookstoreMenu = () => {
   return (
-    <Header className="navbar">
-      <Logo />
+    <Header className="bookstore-menu">
+      <BookstoreLogo />
       <Menu
         theme="dark"
         mode="horizontal"
@@ -23,4 +23,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default BookstoreMenu;
