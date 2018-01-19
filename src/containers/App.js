@@ -1,12 +1,13 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+
 import BookstoreContent from '../components/BookstoreContent/BookstoreContent';
 import BookstoreMenu from '../components/BookstoreMenu/BookstoreMenu';
 
 const App = ({ books }) => {
   return (
-    <div className="bookstore-app">
+    <div>
       <BookstoreMenu />
       <BookstoreContent books={books} />
     </div>

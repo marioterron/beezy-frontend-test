@@ -1,8 +1,8 @@
 import React from 'react';
 import { Layout } from 'antd';
 import PropTypes from 'prop-types';
-import BookstoreCard from '../BookstoreCard/BookstoreCard';
-import BookstoreForm from '../BookstoreForm/BookstoreForm';
+import BookstoreCard from '../../containers/CardContainer';
+import BookstoreForm from '../../containers/FormContainer';
 
 import './bookstore-content.scss';
 
