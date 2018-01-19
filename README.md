@@ -3,6 +3,8 @@
 This app uses webpack as a bundling tool to prepare the development of this project and take care of bundling all assets.
 It also uses [antd](https://ant.design/) as UI library and I use [BEM](http://getbem.com/introduction/) as methodology for write my own styles.
 
+[Try live demo](https://beezy-frontend-test.surge.sh/)
+
 ## ▶️ Installing / Getting started
 
 In order to work locally you need clone this repo:
