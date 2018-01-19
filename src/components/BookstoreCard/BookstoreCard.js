@@ -50,10 +50,13 @@ class BookstoreCard extends Component {
   }
 
   render() {
-    const { title, genre, price } = this.props;
+    const {
+      title, genre, price, isLoading
+    } = this.props;
 
     return (
       <Card
+        loading={isLoading}
         className="bookstore-card"
         title={title}
         actions={[
@@ -107,12 +110,13 @@ class BookstoreCard extends Component {
 }
 
 BookstoreCard.propTypes = {
-  id: PropTypes.number.isRequired,
-  title: PropTypes.string.isRequired,
-  genre: PropTypes.string.isRequired,
-  price: PropTypes.number.isRequired,
+  id: PropTypes.number,
+  title: PropTypes.string,
+  genre: PropTypes.string,
+  price: PropTypes.number,
   onRemoveBook: PropTypes.func.isRequired,
-  onEditBook: PropTypes.func.isRequired
+  onEditBook: PropTypes.func.isRequired,
+  isLoading: PropTypes.bool
 };
 
 export default BookstoreCard;
