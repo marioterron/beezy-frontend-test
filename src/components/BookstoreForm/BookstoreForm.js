@@ -24,7 +24,7 @@ class BookstoreForm extends Component {
     this.props.onAddBook({
       title: this.inputTitle.input.value,
       genre: this.inputGenre.input.value,
-      price: parseInt(this.inputPrice.input.value, 10)
+      price: this.inputPrice.input.value
     });
     this.cleanInputs();
   }
@@ -34,13 +34,19 @@ class BookstoreForm extends Component {
       <Form onSubmit={this.handleSubmit} layout="inline" className="bookstore-form">
         <h1 className="bookstore-form__title">Add a new book to our awesome bookstore</h1>
         <FormItem label="Title">
-          <Input ref={node => (this.inputTitle = node)} />
+          <Input type="text" required ref={node => (this.inputTitle = node)} />
         </FormItem>
         <FormItem label="Genre">
-          <Input ref={node => (this.inputGenre = node)} />
+          <Input type="text" required ref={node => (this.inputGenre = node)} />
         </FormItem>
         <FormItem label="Price">
-          <Input ref={node => (this.inputPrice = node)} />
+          <Input
+            type="number"
+            min="1"
+            step="0.01"
+            required
+            ref={node => (this.inputPrice = node)}
+          />
         </FormItem>
         <FormItem>
           <Button type="primary" htmlType="submit">

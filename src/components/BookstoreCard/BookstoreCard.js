@@ -35,14 +35,11 @@ class BookstoreCard extends Component {
   }
 
   handleEditBook(e) {
-    const price = parseInt(this.inputPrice.input.value, 10);
-    console.log(this.props);
-
     this.props.onEditBook({
       id: this.props.id,
       title: this.inputTitle.input.value,
       genre: this.inputGenre.input.value,
-      price
+      price: this.inputPrice.input.value
     });
     this.hideEdit(e);
   }
@@ -70,6 +67,8 @@ class BookstoreCard extends Component {
         <Input
           className="bookstore-card__input"
           defaultValue={title}
+          type="text"
+          required
           ref={node => (this.inputTitle = node)}
         />
         <div className="bookstore-card__field">
@@ -78,6 +77,8 @@ class BookstoreCard extends Component {
         <Input
           className="bookstore-card__input"
           defaultValue={genre}
+          type="text"
+          required
           ref={node => (this.inputGenre = node)}
         />
         <div className="bookstore-card__field">
@@ -86,6 +87,10 @@ class BookstoreCard extends Component {
         <Input
           className="bookstore-card__input"
           defaultValue={price}
+          type="number"
+          min="1"
+          step="0.01"
+          required
           ref={node => (this.inputPrice = node)}
         />
         <Button
