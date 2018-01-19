@@ -1,8 +1,8 @@
 import React from 'react';
 import { Layout } from 'antd';
 import PropTypes from 'prop-types';
-import BookstoreCard from '../../containers/CardContainer';
-import BookstoreForm from '../../containers/FormContainer';
+import BookstoreCard from '../../containers/BookstoreCardContainer';
+import BookstoreForm from '../../containers/BookstoreFormContainer';
 
 import './bookstore-content.scss';
 
@@ -21,8 +21,11 @@ const BookstoreContent = ({ books }) => {
         </div>
       </Content>
       <Footer style={{ textAlign: 'center' }}>
-        Coded with <span role="img">❤️ </span>by
-        <a href="https://github.com/marioterron">Mario Terron</a>
+        Coded with{' '}
+        <span role="img" aria-label="Corazón">
+          ❤️{' '}
+        </span>by
+        <a href="https://github.com/marioterron"> Mario Terron</a>
       </Footer>
     </Layout>
   );
