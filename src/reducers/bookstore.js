@@ -27,9 +27,13 @@ const bookstore = (state = initialState, action) => {
     case types.REMOVE_BOOK:
       return {
         ...state,
-        books: [...state.books.filter(book => book.id !== action.payload.id)]
+        books: [
+          ...state.books.filter(book => {
+            return book.id !== action.payload.id;
+          })
+        ]
       };
-    case types.MODIFY_BOOK:
+    case types.EDIT_BOOK:
       return {
         ...state,
         books: [

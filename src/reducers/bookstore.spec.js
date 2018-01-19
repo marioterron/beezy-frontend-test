@@ -107,7 +107,7 @@ describe('Bookstore Reducer', () => {
     expect(result).toEqual(expectedState);
   });
 
-  test('modify a book', () => {
+  test('edit a book', () => {
     const initialState = {
       books: [
         {
@@ -153,7 +153,7 @@ describe('Bookstore Reducer', () => {
       ]
     };
     const action = {
-      type: 'MODIFY_BOOK',
+      type: 'EDIT_BOOK',
       payload: {
         id: 3,
         title: 'Eloquent JavaScript: A Modern Introduction to Programming',
